@@ -1,0 +1,12 @@
+USE FreeMarket;
+CREATE TABLE users(
+    email VARCHAR(300) NOT NULL PRIMARY KEY UNIQUE,
+    password VARCHAR(500) NOT NULL,
+    phone INT;
+    );
+CREATE TABLE sessions(
+    token VARCHAR(1000) NOT NULL UNIQUE,
+    email VARCHAR(300) NOT NULL,
+    FOREIGN KEY(email) REFERENCES users(email)
+    ON DELETE CASCADE ON UPDATE CASCADE
+    );
