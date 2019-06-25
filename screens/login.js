@@ -95,6 +95,10 @@ export const ForgetTxt = styled.Text`
 
 
 export default class Login extends Component {
+  state = {
+    email: "",
+    password: "",
+  }
   render() {
     return (
       <Container>
@@ -109,6 +113,8 @@ export default class Login extends Component {
               autoCompleteType="off"
               placeholderTextColor="white"
               selectionColor={"red"}
+              value={this.state.email}
+              onChangeText={(email) => this.setState({ email })}
             />
             <InpIcon name="mail" color={colors.comet} />
           </Inp>
@@ -120,6 +126,8 @@ export default class Login extends Component {
               placeholderTextColor="white"
               selectionColor={"red"}
               secureTextEntry={true}
+              value={this.state.password}
+              onChangeText={(password) => this.setState({ password })}
             />
             <InpIcon name="lock" color={colors.comet} />
           </Inp>
